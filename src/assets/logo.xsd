@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="svg">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="defs">
+					<xs:complexType>
+						<xs:attribute name="id" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="g" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="g" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence minOccurs="0">
+										<xs:element name="path" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="d" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="circle" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="cx" type="xs:decimal" use="required" />
+												<xs:attribute name="cy" type="xs:decimal" use="required" />
+												<xs:attribute name="transform" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="polygon" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="fill" use="required" />
+												<xs:attribute name="points" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="path" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="d" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" use="required" />
+						<xs:attribute name="featurekey" use="required" />
+						<xs:attribute name="transform" use="required" />
+						<xs:attribute name="fill" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="width" type="xs:decimal" use="required" />
+			<xs:attribute name="height" type="xs:decimal" use="required" />
+			<xs:attribute name="viewBox" use="required" />
+			<xs:attribute name="class" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
