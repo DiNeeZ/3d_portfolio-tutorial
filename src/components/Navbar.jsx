@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
-          to='/'
+          to='#'
           className='flex items-center gap-2'
           onClick={() => {
             setActive('');
@@ -35,7 +35,7 @@ const Navbar = () => {
               className={`${active === link.title ? 'text-white' : 'text-secondary'}
             hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}>
-              <Link to={`/${link.id}`}>{link.title}</Link>
+              <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
         </ul>
@@ -57,12 +57,12 @@ const Navbar = () => {
                 <li
                   key={link.id}
                   className={`${active === link.title ? 'text-white' : 'text-secondary'}
-                font-poppins font-medium cursor-pointer text-[16px]`}
+                  font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => {
                     setActive(link.title);
                     setToggle(!toggle);
                   }}>
-                  <Link to={`/${link.id}`}>{link.title}</Link>
+                  <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
             </ul>
