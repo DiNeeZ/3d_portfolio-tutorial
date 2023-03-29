@@ -19,7 +19,7 @@ const Ball = ({ imgUrl }) => {
         castShadow
         receiveShadow
         scale={2.75}>
-        <icosahedronBufferGeometry args={[1, 1]} />
+        <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           color='#fff8eb'
           polygonOffset
